@@ -1,0 +1,32 @@
+Data = Input from Advent of code
+
+## Part 1
+
+list1 = []
+list2 = []
+for line in data.strip().split("\n"):
+    values = line.split()
+    list1.append(int(values[0]))
+    list2.append(int(values[1]))
+
+print ("list 1", list1)
+print ("List 2" , list2)
+list1_sorted = sorted(list1)
+list2_sorted = sorted(list2)
+distance = 0
+n = len(list1)
+for i in range(n):
+    value = abs(list1_sorted[i]-list2_sorted[i])
+    distance = distance + value
+print ("Distance" , distance)
+
+## Part 2
+
+total_score = 0
+for i in range(n):
+    value = list1[i]
+    Count = list2.count(value)
+    similarity_score = value*Count
+    total_score = similarity_score + total_score
+    
+print("total similarity score" , total_score)
